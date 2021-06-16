@@ -5,9 +5,21 @@ public class Sala {
 	private String tipoSala;
 	private int numeroDeLugares;
 
-	public Sala(int codigo, String tipoSala, int nFileiras, int nLugaresPorFileira){
+
+	public Sala(int codigo, String tipoSala, int numeroDeLugares){
 		this.codigo = codigo;
 		this.tipoSala = tipoSala;
-		this.numeroDeLugares = nFileiras * nLugaresPorFileira;
+		this.numeroDeLugares = numeroDeLugares;
 	}
+
+
+	public int getNumeroDeLugares() {
+		return this.numeroDeLugares;
+	}
+
+
+	public String getCodigo() {
+		return null;
+	}
+
 }

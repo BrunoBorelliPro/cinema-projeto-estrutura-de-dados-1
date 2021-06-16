@@ -22,7 +22,7 @@ public class Funcoes(){
 			sessoes.forEach((sessao)->{
 				if(sessao.getFilme().getCodigo() == codigoDoFilme){
                     System.out.println("---------------------------------------");
-					System.out.println("SESSÃO " + sessao.getCodigo() );
+					System.out.println("SESSÃO 1 " + sessao.getCodigo() );
 					System.out.println("Sala: " + sessao.getSala().getCodigo() + " Horário: " + sessao.getHorario());                                  							
                 }
 			});

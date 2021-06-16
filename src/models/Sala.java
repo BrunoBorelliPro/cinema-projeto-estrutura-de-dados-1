@@ -5,7 +5,9 @@ public class Sala {
 	private String tipoSala;
 	private int numeroDeLugares;
 
-
+	public Sala(){
+		
+	}
 	public Sala(int codigo, String tipoSala, int numeroDeLugares){
 		this.codigo = codigo;
 		this.tipoSala = tipoSala;
@@ -19,7 +21,7 @@ public class Sala {
 
 
 	public String getCodigo() {
-		return null;
+		return this.codigo();
 	}
 
 }

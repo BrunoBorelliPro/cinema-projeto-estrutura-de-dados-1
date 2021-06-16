@@ -6,7 +6,7 @@ public class Sessao {
 	private Sala sala;
 	private Filme filme;
 	private LocalTime horario;
-	private boolean[] lugares;
+	private boolean[][] lugares;
 	private int codigo;
 	
 	public Sessao(int codigo, Sala sala, Filme filme, LocalTime horario){
@@ -14,11 +14,16 @@ public class Sessao {
 		this.sala = sala;
 		this.filme = filme;
 		this.horario = horario;
-		this.lugares = new boolean[sala.getNumeroDeLugares()];	
+		if(sala.getCodigo() == 1) this.lugares = new boolean[20][10];	
+		if(sala.getCodigo() == 2) this.lugares = new boolean[20][8];	
 	}
 
 	public void compraLugar(int idLugar){
 		lugares[idLugar] = true;
+	}
+	
+	public boolean[][] getLugares(){
+		return this.lugares
 	}
 
 	public Filme getFilme(){

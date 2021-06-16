@@ -1,4 +1,5 @@
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,23 +11,30 @@ import utils.Funcoes;
 public class Main {
     public static void main(String[] args) {
         int varControle = 0;
-        Scanner entrada = new Scanner(System.in);
-        Filme[] filmes = new Filme[4];
         Funcoes f = new Funcoes();
-        ArrayList<Sessao> sessoes = new ArrayList<>();
+        Scanner entrada = new Scanner(System.in);
+        
+        Filme[] filmes = new Filme[4];
+        filmes[0] = "Orgulho e preconceito";
+        filmes[1] = "Jogos vorazes";
+        filmes[2] = "Matrix";
+        filmes[3] = "Red";
+
+
+        ArrayList<Sessao> sessoes = new ArrayList<Sessao>();
 		ArrayList<Atendente> atendentes = new ArrayList<Atendente>();
+		Sala sala1 = new Sala(1, "Sala 1", 200);
+		Sala sala2 = new Sala(2, "Sala 2", 160);
+
 
 		atendentes.add(new Atendente(1, "Maria", "123.456.789-12"));
 		atendentes.add(new Atendente(2, "Bruna", "223.456.789-12"));
+		
+		sessoes.add(new Sessao(1, sala1, filmes[1], LocalDateTime.now()));
+		sessoes.add(new Sessao(2, sala2, filmes[2], LocalDateTime.now()));
 
-        while (!(varControle == 6)){
-            System.out.println("Opções:");
-            System.out.println("1. Vendas de ingressos");
-            System.out.println("2. Gerenciamento de filmes");
-            System.out.println("3. Gerenciamento de salas");
-            System.out.println("4. Gerenciamento de atendentes");
-            System.out.println("5. Financeiro");
-            System.out.println("6. Sair");
+        while (varControle != 6){
+        	f.exibeMenu();
             varControle = Integer.parseInt(entrada.nextLine());
             switch (varControle){
                 case 1:
@@ -42,6 +50,7 @@ public class Main {
                         
                         System.out.println("Qual o código da sessão? ");
                         int codigoSessao = Integer.parseInt(entrada.nextLine());
+                                            
                     }
                     					
                 break;
